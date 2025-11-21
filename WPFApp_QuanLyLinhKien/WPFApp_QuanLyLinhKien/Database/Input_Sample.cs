@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPF_LINHKIEN_PC.CoSoDuLieu;
+using WPFApp_QuanLyLinhKien.Database;
 using WPFApp_QuanLyLinhKien.Models;
 
 namespace WPFApp_QuanLyLinhKien.Database

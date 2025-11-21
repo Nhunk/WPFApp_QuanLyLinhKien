@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using WPFApp_QuanLyLinhKien.Models;
 
 namespace WPFApp_QuanLyLinhKien.Models
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WPFApp_QuanLyLinhKien.Models;
 
-namespace WPF_LINHKIEN_PC.CoSoDuLieu
+namespace WPFApp_QuanLyLinhKien.Database
 {
     public class AppDbContext : DbContext
     {
