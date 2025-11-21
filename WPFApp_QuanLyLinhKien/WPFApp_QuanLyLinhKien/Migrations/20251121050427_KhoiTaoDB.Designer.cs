@@ -5,14 +5,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WPF_LINHKIEN_PC.CoSoDuLieu;
+using WPFApp_QuanLyLinhKien.Database;
 
 #nullable disable
 
 namespace WPFApp_QuanLyLinhKien.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251121025923_KhoiTaoDB")]
+    [Migration("20251121050427_KhoiTaoDB")]
     partial class KhoiTaoDB
     {
         /// <inheritdoc />

@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using WPFApp_QuanLyLinhKien.Database;
 
 namespace WPFApp_QuanLyLinhKien
@@ -11,9 +9,11 @@ namespace WPFApp_QuanLyLinhKien
         {
             base.OnStartup(e);
 
-            using var db = new AppDbContext();
-            Input_Sample.Seed(db); 
+            using (var db = new AppDbContext())
+            {
+                // Tạo database và nhập dữ liệu mẫu
+                Input.Seed(db);
+            }
         }
     }
-
 }

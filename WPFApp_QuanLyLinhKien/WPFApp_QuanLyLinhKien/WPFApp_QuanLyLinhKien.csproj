@@ -23,9 +23,8 @@
 
   <ItemGroup>
     <Folder Include="Cores\" />
-    <Folder Include="ViewModels\Admin\" />
+    <Folder Include="Migrations\" />
     <Folder Include="ViewModels\Staff\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Staff\" />
   </ItemGroup>
 
