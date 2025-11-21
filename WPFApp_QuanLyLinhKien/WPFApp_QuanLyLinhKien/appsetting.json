@@ -1,0 +1,7 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=QuanLyLinhKien;Trusted_Connection=True;"
+  }
+}{
+
+}
