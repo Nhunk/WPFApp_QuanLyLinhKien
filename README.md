@@ -2,6 +2,8 @@
 
 Một ứng dụng Desktop hiện đại được xây dựng bằng **WPF (.NET)**, nhằm quản lý toàn bộ quy trình bán hàng linh kiện điện tử. Dự án tích hợp các công nghệ truy xuất dữ liệu mạnh mẽ (**EF Core/LINQ**) và khả năng dự đoán/xử lý thông minh thông qua mô hình **AI/ONNX**.
 
+---
+
 ## Tính Năng Nổi Bật
 
 * **Quản lý CRUD Đầy Đủ:** Quản lý danh mục Sản phẩm, Khách hàng, Đơn hàng, và Kho hàng.
@@ -10,7 +12,9 @@ Một ứng dụng Desktop hiện đại được xây dựng bằng **WPF (.NET
 * **Giao diện WPF:** Giao diện người dùng trực quan, được xây dựng trên Windows Presentation Foundation.
 * **Tích hợp API:** Giao tiếp với các dịch vụ bên ngoài (hoặc mô hình AI) qua các lệnh gọi API.
 
-## 🛠️ Công Nghệ Sử Dụng
+---
+
+## Công Nghệ Sử Dụng
 
 | Lĩnh vực | Công nghệ | Phiên bản | Ghi chú |
 | :--- | :--- | :--- | :--- |
@@ -28,16 +32,18 @@ Một ứng dụng Desktop hiện đại được xây dựng bằng **WPF (.NET
 * `Microsoft.EntityFrameworkCore.Tools`
 * **[Gói ONNX của bạn]** Ví dụ: `Microsoft.ML.OnnxRuntime`
 
-## 🚀 Cài Đặt và Khởi Chạy
+---
+
+## Cài Đặt và Khởi Chạy
 
 ### 1. Yêu cầu Hệ thống
 
 * [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (Bắt buộc)
 * Visual Studio 2022 (Khuyến nghị)
-* SQL Server LocalDB (Mặc định được cài cùng Visual Studio)
+* SQL Server LocalDB (Data storage and processing - Mặc định được cài cùng Visual Studio)
 
 ### 2. Tải Mã Nguồn
 
 ```bash
-git clone https://github.com/Nhunk/WPFApp_QuanLyLinhKien
+git clone [https://github.com/Nhunk/WPFApp_QuanLyLinhKien](https://github.com/Nhunk/WPFApp_QuanLyLinhKien)
 cd WPFApp_QuanLyLinhKien
