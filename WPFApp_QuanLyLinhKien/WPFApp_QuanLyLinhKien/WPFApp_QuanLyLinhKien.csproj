@@ -24,8 +24,8 @@
   <ItemGroup>
     <Folder Include="Cores\" />
     <Folder Include="Migrations\" />
-    <Folder Include="ViewModels\Staff\" />
-    <Folder Include="Views\Staff\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\Admin\" />
   </ItemGroup>
 
 </Project>

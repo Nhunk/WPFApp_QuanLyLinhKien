@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPFApp_QuanLyLinhKien.Views.Login
+namespace WPFApp_QuanLyLinhKien.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for DangNhapView.xaml
+    /// Interaction logic for AdminDashboard.xaml
     /// </summary>
-    public partial class DangNhapView : Window
+    public partial class AdminDashboard : Window
     {
-        public DangNhapView()
+        public AdminDashboard()
         {
             InitializeComponent();
         }
