@@ -12,16 +12,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WPFApp_QuanLyLinhKien.Views.Staff
+namespace WPFApp_QuanLyLinhKien.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for StaffDashboard.xaml
+    /// Interaction logic for AdminDashboard.xaml
     /// </summary>
-    public partial class StaffDashboard : Window
+    public partial class AdminDashboardView : Window
     {
-        public StaffDashboard()
+        public AdminDashboardView()
         {
             InitializeComponent();
+        }
+
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

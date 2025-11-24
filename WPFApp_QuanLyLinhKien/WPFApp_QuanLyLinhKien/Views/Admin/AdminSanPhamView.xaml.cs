@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WPFApp_QuanLyLinhKien.Views.Admin
 {
     /// <summary>
-    /// Interaction logic for AdminDashboard.xaml
+    /// Interaction logic for AdminSanPhamView.xaml
     /// </summary>
-    public partial class AdminDashboard : Window
+    public partial class AdminSanPhamView : Window
     {
-        public AdminDashboard()
+        public AdminSanPhamView()
         {
             InitializeComponent();
         }

@@ -46,13 +46,13 @@ namespace WPFApp_QuanLyLinhKien.Views.Login
             // Nếu đăng nhập đúng → kiểm tra role
             if (account.Role == "Admin")
             {
-                var adminWindow = new Views.Admin.AdminDashboard();
+                var adminWindow = new Views.Admin.AdminDashboardView();
                 adminWindow.Show();
                 this.Close();
             }
             else if (account.Role == "Staff")
             {
-                var staffWindow = new Views.Staff.StaffDashboard();
+                var staffWindow = new Views.Staff.StaffDashboardView();
                 staffWindow.Show();
                 this.Close();
             }
