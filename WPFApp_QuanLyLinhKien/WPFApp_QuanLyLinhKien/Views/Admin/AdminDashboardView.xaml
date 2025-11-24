@@ -1,54 +1,14 @@
-﻿<Window x:Class="WPFApp_QuanLyLinhKien.Views.Admin.AdminDashboardView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFApp_QuanLyLinhKien.Views.Admin"
-        mc:Ignorable="d"
-        Title="AdminDashboard" Height="450" Width="800">
+﻿<Page x:Class="WPFApp_QuanLyLinhKien.Views.Admin.AdminDashBoardView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFApp_QuanLyLinhKien.Views.Admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminDashBoardView">
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Border Grid.Column="0" Background="#1A237E">
-
-            <DockPanel Margin="10">
-                <TextBlock DockPanel.Dock="Top"
-                           Background="Transparent" 
-                           Foreground="White"
-                           FontSize="22"
-                           Margin="10"
-                           FontWeight="Bold"
-                           >
-                    Admin Panel
-                </TextBlock>
-                <Button Content="Đăng xuất" 
-                        DockPanel.Dock="Bottom" 
-                        Width="Auto" HorizontalAlignment="Center"  
-                        Background="#1A237E"
-                        Foreground="White" Click="Bt_DangXuat"/>
-
-                <ListBox x:Name="MainMenuListBox" 
-                         Background="Transparent" 
-                         BorderThickness="0"
-                         Foreground="White" 
-                         SelectionMode="Single"
-                         Margin="10"> 
-                    <ListBoxItem Content="Dashboard" IsSelected="True"/>
-                    <ListBoxItem Content="Sản phẩm"/>
-                    <ListBoxItem Content="Danh mục" />
-                    <ListBoxItem Content="Nhà cung cấp"/>
-                    <ListBoxItem Content="Đơn hàng"/>
-                    <ListBoxItem Content="Khách hàng"/>
-                    <ListBoxItem Content="Báo cáo"/>
-                    <ListBoxItem Content="Nhân viên"/>
-                </ListBox>
-            </DockPanel>
-        </Border>
-        
-        
-        <Frame Grid.Column="1" x:Name="AdminFrame" NavigationUIVisibility="Hidden"/>
+        <TextBox>Dashboard</TextBox>
     </Grid>
-</Window>
+</Page>

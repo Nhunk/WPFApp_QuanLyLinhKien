@@ -22,8 +22,8 @@
         <TextBox Name="txtUsername"  Grid.Row="0" Grid.Column="1" Margin="6" Width="180" Height="25" />
         <PasswordBox Name="txtPassword"  Grid.Row="1" Grid.Column="1" Margin="6" Width="180" Height="25"/>
         <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <Button Content="Đăng nhập" Width="100" Height="28" Click="Button_DangNhap" Margin="8"/>
-            <Button Content="Thoát" Width="100" Height="28" Click="Button_Thoat"/>
+            <Button Content="Đăng nhập" Width="100" Height="28" Click="Bt_DangNhap" Margin="8"/>
+            <Button Content="Thoát" Width="100" Height="28" Click="Bt_Thoat"/>
         </WrapPanel>
     </Grid>
 </Window>

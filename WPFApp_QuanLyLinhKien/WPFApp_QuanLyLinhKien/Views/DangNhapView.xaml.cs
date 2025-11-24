@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using WPFApp_QuanLyLinhKien.Database;
 
 namespace WPFApp_QuanLyLinhKien.Views.Login
@@ -22,12 +10,12 @@ namespace WPFApp_QuanLyLinhKien.Views.Login
             InitializeComponent();
         }
 
-        private void Button_Thoat(object sender, RoutedEventArgs e)
+        private void Bt_Thoat(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        private void Button_DangNhap(object sender, RoutedEventArgs e)
+        private void Bt_DangNhap(object sender, RoutedEventArgs e)
         {
 
             string user = txtUsername.Text.Trim();
@@ -46,13 +34,13 @@ namespace WPFApp_QuanLyLinhKien.Views.Login
             // Nếu đăng nhập đúng → kiểm tra role
             if (account.Role == "Admin")
             {
-                var adminWindow = new Views.Admin.AdminDashboardView();
+                var adminWindow = new Views.Admin.AdminHomeView();
                 adminWindow.Show();
                 this.Close();
             }
             else if (account.Role == "Staff")
             {
-                var staffWindow = new Views.Staff.StaffDashboardView();
+                var staffWindow = new Views.Staff.StaffHomeView();
                 staffWindow.Show();
                 this.Close();
             }

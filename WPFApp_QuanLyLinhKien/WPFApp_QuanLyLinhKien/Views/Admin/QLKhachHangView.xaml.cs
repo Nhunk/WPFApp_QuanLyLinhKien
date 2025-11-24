@@ -1,12 +1,10 @@
 ﻿using System.Windows.Controls;
 
-
 namespace WPFApp_QuanLyLinhKien.Views.Admin
 {
-
-    public partial class AdminDashBoardView : Page
+    public partial class QLKhachHangView : Page
     {
-        public AdminDashBoardView()
+        public QLKhachHangView()
         {
             InitializeComponent();
         }
