@@ -28,7 +28,7 @@
                         DockPanel.Dock="Bottom" 
                         Width="Auto" HorizontalAlignment="Center"  
                         Background="#1A237E"
-                        Foreground="White"/>
+                        Foreground="White" Click="Bt_DangXuat"/>
 
                 <ListBox x:Name="MainMenuListBox" 
                          Background="Transparent" 
@@ -47,6 +47,8 @@
                 </ListBox>
             </DockPanel>
         </Border>
+        
+        
         <Frame Grid.Column="1" x:Name="AdminFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

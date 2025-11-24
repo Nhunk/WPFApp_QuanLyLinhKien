@@ -26,12 +26,11 @@
                 </TextBlock>
 
                 <Button Content="Đăng xuất" 
-                        DockPanel.Dock="Right" 
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Center"
+                        DockPanel.Dock="Right"
                         Background="#38439E" 
                         Foreground="White"
-                        Padding="10, 5"/>
+                        Padding="10, 5" Width="76"
+                        Click="bt_DangXuat"/>
 
                 <ListBox x:Name="MainMenuListBox" 
                          Background="Transparent" 

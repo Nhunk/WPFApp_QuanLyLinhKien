@@ -11,17 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WPFApp_QuanLyLinhKien.Views.Login;
 
 namespace WPFApp_QuanLyLinhKien.Views.Staff
 {
-    /// <summary>
-    /// Interaction logic for StaffDashboard.xaml
-    /// </summary>
+
     public partial class StaffDashboardView : Window
     {
         public StaffDashboardView()
         {
             InitializeComponent();
+        }
+
+        private void bt_DangXuat(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new DangNhapView();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }
