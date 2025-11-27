@@ -1,8 +1,9 @@
-﻿<Application x:Class="WPFApp_QuanLyLinhKien.App"
+﻿<Application x:Class="WpfApp_QuanLyLinhKien.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WPFApp_QuanLyLinhKien"
-             StartupUri="Views/DangNhapView.xaml">
+             xmlns:local="clr-namespace:WpfApp_QuanLyLinhKien"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
+         
     </Application.Resources>
 </Application>
