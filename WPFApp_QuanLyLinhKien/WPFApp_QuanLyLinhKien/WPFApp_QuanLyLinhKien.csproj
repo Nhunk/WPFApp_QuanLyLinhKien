@@ -50,8 +50,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,6 +79,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Account.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietDonHang.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietPhieuNhap.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DonHang.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kho.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiSanPham.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_QLLK.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCungCap.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhap.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SanPham.cs">
+      <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +131,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model_QLLK.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_QLLK.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_QLLK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -101,6 +158,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model_QLLK.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_QLLK.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model_QLLK.edmx.diagram">
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +175,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model_QLLK.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+      <LastGenOutput>Model_QLLK.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model_QLLK.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+      <LastGenOutput>Model_QLLK.cs</LastGenOutput>
+    </Content>
     <Resource Include="Data\Images\cpu1.jpg" />
     <Resource Include="Data\Images\cpu2.jpg" />
     <Resource Include="Data\Images\cpu3.jpg" />
@@ -173,6 +248,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
