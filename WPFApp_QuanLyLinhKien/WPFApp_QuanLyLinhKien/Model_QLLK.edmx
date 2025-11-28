@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLLKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="AccountID" />
@@ -242,7 +242,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelStoreContainer">
+        <EntityContainer Name="QLLKModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietDonHang" EntityType="Self.ChiTietDonHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietPhieuNhap" EntityType="Self.ChiTietPhieuNhap" Schema="dbo" store:Type="Tables" />
@@ -303,7 +303,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QLLKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="AccountID" />
@@ -563,7 +563,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities_QLLK" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLLKEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
           <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHang" />
           <EntitySet Name="ChiTietPhieuNhaps" EntityType="Self.ChiTietPhieuNhap" />
@@ -625,9 +625,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities_QLLK">
+        <EntityContainerMapping StorageEntityContainer="QLLKModelStoreContainer" CdmEntityContainer="QLLKEntities">
           <EntitySetMapping Name="Accounts">
-            <EntityTypeMapping TypeName="Model.Account">
+            <EntityTypeMapping TypeName="QLLKModel.Account">
               <MappingFragment StoreEntitySet="Account">
                 <ScalarProperty Name="AccountID" ColumnName="AccountID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -637,7 +637,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiTietDonHangs">
-            <EntityTypeMapping TypeName="Model.ChiTietDonHang">
+            <EntityTypeMapping TypeName="QLLKModel.ChiTietDonHang">
               <MappingFragment StoreEntitySet="ChiTietDonHang">
                 <ScalarProperty Name="ChiTietDonHangID" ColumnName="ChiTietDonHangID" />
                 <ScalarProperty Name="DonHangID" ColumnName="DonHangID" />
@@ -648,7 +648,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ChiTietPhieuNhaps">
-            <EntityTypeMapping TypeName="Model.ChiTietPhieuNhap">
+            <EntityTypeMapping TypeName="QLLKModel.ChiTietPhieuNhap">
               <MappingFragment StoreEntitySet="ChiTietPhieuNhap">
                 <ScalarProperty Name="ChiTietPhieuNhapID" ColumnName="ChiTietPhieuNhapID" />
                 <ScalarProperty Name="PhieuNhapID" ColumnName="PhieuNhapID" />
@@ -659,7 +659,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DonHangs">
-            <EntityTypeMapping TypeName="Model.DonHang">
+            <EntityTypeMapping TypeName="QLLKModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
                 <ScalarProperty Name="DonHangID" ColumnName="DonHangID" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
@@ -669,7 +669,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="Model.KhachHang">
+            <EntityTypeMapping TypeName="QLLKModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
                 <ScalarProperty Name="KhachHangID" ColumnName="KhachHangID" />
                 <ScalarProperty Name="TenKH" ColumnName="TenKH" />
@@ -679,7 +679,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Khoes">
-            <EntityTypeMapping TypeName="Model.Kho">
+            <EntityTypeMapping TypeName="QLLKModel.Kho">
               <MappingFragment StoreEntitySet="Kho">
                 <ScalarProperty Name="KhoID" ColumnName="KhoID" />
                 <ScalarProperty Name="SanPhamID" ColumnName="SanPhamID" />
@@ -689,7 +689,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LoaiSanPhams">
-            <EntityTypeMapping TypeName="Model.LoaiSanPham">
+            <EntityTypeMapping TypeName="QLLKModel.LoaiSanPham">
               <MappingFragment StoreEntitySet="LoaiSanPham">
                 <ScalarProperty Name="LoaiSanPhamID" ColumnName="LoaiSanPhamID" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
@@ -697,7 +697,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhaCungCaps">
-            <EntityTypeMapping TypeName="Model.NhaCungCap">
+            <EntityTypeMapping TypeName="QLLKModel.NhaCungCap">
               <MappingFragment StoreEntitySet="NhaCungCap">
                 <ScalarProperty Name="NhaCungCapID" ColumnName="NhaCungCapID" />
                 <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
@@ -708,7 +708,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="Model.NhanVien">
+            <EntityTypeMapping TypeName="QLLKModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="NhanVienID" ColumnName="NhanVienID" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
@@ -721,7 +721,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhieuNhaps">
-            <EntityTypeMapping TypeName="Model.PhieuNhap">
+            <EntityTypeMapping TypeName="QLLKModel.PhieuNhap">
               <MappingFragment StoreEntitySet="PhieuNhap">
                 <ScalarProperty Name="PhieuNhapID" ColumnName="PhieuNhapID" />
                 <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
@@ -731,7 +731,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
-            <EntityTypeMapping TypeName="Model.SanPham">
+            <EntityTypeMapping TypeName="QLLKModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="SanPhamID" ColumnName="SanPhamID" />
                 <ScalarProperty Name="TenSP" ColumnName="TenSP" />

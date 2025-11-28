@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -82,6 +82,10 @@
     <Compile Include="Account.cs">
       <DependentUpon>Model_QLLK.tt</DependentUpon>
     </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ChiTietDonHang.cs">
       <DependentUpon>Model_QLLK.tt</DependentUpon>
     </Compile>
@@ -100,10 +104,20 @@
     <Compile Include="LoaiSanPham.cs">
       <DependentUpon>Model_QLLK.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model_QLLK.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_QLLK.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model_QLLK.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_QLLK.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_QLLK.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
     </Compile>
     <Compile Include="NhaCungCap.cs">
       <DependentUpon>Model_QLLK.tt</DependentUpon>
@@ -117,30 +131,53 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>Model_QLLK.tt</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Views\Admin\AdminDashBoardView.xaml.cs">
+      <DependentUpon>AdminDashBoardView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Views\Admin\AdminHomeView.xaml.cs">
+      <DependentUpon>AdminHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\BaoCaoView.xaml.cs">
+      <DependentUpon>BaoCaoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLDanhMucView.xaml.cs">
+      <DependentUpon>QLDanhMucView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLDonHangView.xaml.cs">
+      <DependentUpon>QLDonHangView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLKhachHangView.xaml.cs">
+      <DependentUpon>QLKhachHangView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLNhaCungCapView.xaml.cs">
+      <DependentUpon>QLNhaCungCapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLNhanVienView.xaml.cs">
+      <DependentUpon>QLNhanVienView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\QLSanPhamView.xaml.cs">
+      <DependentUpon>QLSanPhamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DangNhapView.xaml.cs">
+      <DependentUpon>DangNhapView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\StaffDashBoardView.xaml.cs">
+      <DependentUpon>StaffDashBoardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\StaffDonHangView.xaml.cs">
+      <DependentUpon>StaffDonHangView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\StaffHomeView.xaml.cs">
+      <DependentUpon>StaffHomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\StaffKhachHangView.xaml.cs">
+      <DependentUpon>StaffKhachHangView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\StaffSanPhamView.xaml.cs">
+      <DependentUpon>StaffSanPhamView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model_QLLK.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model_QLLK.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model_QLLK.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model_QLLK.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -175,16 +212,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model_QLLK.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_QLLK.edmx</DependentUpon>
-      <LastGenOutput>Model_QLLK.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model_QLLK.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model_QLLK.edmx</DependentUpon>
-      <LastGenOutput>Model_QLLK.cs</LastGenOutput>
-    </Content>
     <Resource Include="Data\Images\cpu1.jpg" />
     <Resource Include="Data\Images\cpu2.jpg" />
     <Resource Include="Data\Images\cpu3.jpg" />
@@ -229,13 +256,6 @@
     <Resource Include="Data\Images\ssd6.jpg" />
     <Resource Include="Data\Images\ssd7.jpg" />
     <Resource Include="Data\Images\ssd8.jpg" />
-    <Content Include="QLLinhKien.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QLLinhKien_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLLinhKien.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -251,6 +271,83 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Admin\AdminDashBoardView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\AdminHomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\BaoCaoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLDanhMucView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLDonHangView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLKhachHangView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLNhaCungCapView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLNhanVienView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\QLSanPhamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DangNhapView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\StaffDashBoardView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\StaffDonHangView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\StaffHomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\StaffKhachHangView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\StaffSanPhamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\SQLQuery.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model_QLLK.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+      <LastGenOutput>Model_QLLK.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model_QLLK.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_QLLK.edmx</DependentUpon>
+      <LastGenOutput>Model_QLLK.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

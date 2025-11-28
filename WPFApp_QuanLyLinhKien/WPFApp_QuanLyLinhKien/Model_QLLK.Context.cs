@@ -13,10 +13,10 @@ namespace WPFApp_QuanLyLinhKien
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities_QLLK : DbContext
+    public partial class QLLKEntities : DbContext
     {
-        public Entities_QLLK()
-            : base("name=Entities_QLLK")
+        public QLLKEntities()
+            : base("name=QLLKEntities")
         {
         }
     

@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFApp_QuanLyLinhKien.Views.DangNhapView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp_QuanLyLinhKien.Views"
+        mc:Ignorable="d"
+        Title="DangNhap" Height="200" Width="400">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Tên đăng nhập" Grid.Row="0" Grid.Column="0" Margin="6"/>
+        <Label Content="Mật khẩu"  Grid.Row="1" Grid.Column="0" Margin="6"/>
+        <TextBox Name="txtUsername"  Grid.Row="0" Grid.Column="1" Margin="6" Width="180" Height="25" />
+        <PasswordBox Name="txtPassword"  Grid.Row="1" Grid.Column="1" Margin="6" Width="180" Height="25"/>
+        <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button Content="Đăng nhập" Width="100" Height="28" Click="Bt_DangNhap" Margin="8"/>
+            <Button Content="Thoát" Width="100" Height="28" Click="Bt_Thoat"/>
+        </WrapPanel>
+    </Grid>
+</Window>
