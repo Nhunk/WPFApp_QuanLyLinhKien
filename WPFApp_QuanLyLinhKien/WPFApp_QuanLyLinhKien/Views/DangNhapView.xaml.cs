@@ -41,7 +41,7 @@ namespace WPFApp_QuanLyLinhKien.Views
                 adminWindow.Show();
                 this.Close();
             }
-            else if (account.Role == "NhanVien")
+            else if (account.Role == "Staff")
             {
                 var staffWindow = new Views.Staff.StaffHomeView();
                 staffWindow.Show();
