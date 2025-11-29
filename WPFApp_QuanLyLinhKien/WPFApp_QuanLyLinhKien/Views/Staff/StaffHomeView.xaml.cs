@@ -23,9 +23,20 @@ namespace WPFApp_QuanLyLinhKien.Views.Staff
 
         private void bt_DangXuat(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new DangNhapView();   // CHỈ chạy nếu DangNhapView.xaml.cs tồn tại
-            loginWindow.Show();
-            this.Close();
+            var result = MessageBox.Show(
+            "Bạn có chắc muốn đăng xuất không?",
+            "Xác nhận đăng xuất",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Question
+            );
+
+            // Nếu chọn Yes → đăng xuất
+            if (result == MessageBoxResult.Yes)
+            {
+                var loginWindow = new DangNhapView();
+                loginWindow.Show();
+                this.Close();
+            }
         }
 
         private void lb_Staff(object sender, SelectionChangedEventArgs e)

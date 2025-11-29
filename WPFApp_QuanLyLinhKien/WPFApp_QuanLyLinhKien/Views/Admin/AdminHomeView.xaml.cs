@@ -24,10 +24,21 @@ namespace WPFApp_QuanLyLinhKien.Views.Admin
 
         private void Bt_DangXuat(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new DangNhapView();
+            var result = MessageBox.Show(
+            "Bạn có chắc muốn đăng xuất không?",
+            "Xác nhận đăng xuất",
+            MessageBoxButton.YesNo,
+            MessageBoxImage.Question
+            );
 
-            loginWindow.Show();
-            this.Close();
+            // Nếu chọn Yes → đăng xuất
+            if (result == MessageBoxResult.Yes)
+            {
+                var loginWindow = new DangNhapView();
+
+                loginWindow.Show();
+                this.Close();
+            }
         }
 
         private void lb_Admin(object sender, SelectionChangedEventArgs e)
@@ -71,7 +82,7 @@ namespace WPFApp_QuanLyLinhKien.Views.Admin
                 case "Báo cáo":
                     AdminFrame.Navigate(new BaoCaoView());
                     break;
-
+                        
                 default:
                     break;
             }
