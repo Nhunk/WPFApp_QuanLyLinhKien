@@ -62,6 +62,7 @@
                     </ListBox.ItemContainerStyle>
 
                     <ListBoxItem Content="Dashboard"/>
+                    <ListBoxItem Content="Danh mục" />
                     <ListBoxItem Content="Sản phẩm" />
                     <ListBoxItem Content="Đơn hàng" />
                     <ListBoxItem Content="Khách hàng" />

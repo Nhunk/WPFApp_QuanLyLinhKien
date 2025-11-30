@@ -51,14 +51,17 @@ namespace WPFApp_QuanLyLinhKien.Views.Staff
 
             switch (selected)
             {
+                case "Danh mục":
+                    StaffFrame.Navigate(new QLDanhMucView());
+                    break;
                 case "Sản phẩm":
-                    StaffFrame.Navigate(new StaffSanPhamView());
+                    StaffFrame.Navigate(new QLSanPhamView());
                     break;
                 case "Đơn hàng":
-                    StaffFrame.Navigate(new StaffDonHangView());
+                    StaffFrame.Navigate(new QLDonHangView());
                     break;
                 case "Khách hàng":
-                    StaffFrame.Navigate(new StaffKhachHangView());
+                    StaffFrame.Navigate(new QLKhachHangView());
                     break;
                 case "Dashboard":
                     StaffFrame.Navigate(new StaffDashBoardView());

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using WPFApp_QuanLyLinhKien.Models;
+using WPFApp_QuanLyLinhKien.Services;
+using WPFApp_QuanLyLinhKien.Services.Session;
+using WPFApp_QuanLyLinhKien.Views.Admin;
+using WPFApp_QuanLyLinhKien.Views.Staff;
 
 namespace WPFApp_QuanLyLinhKien.Views
 {
     public partial class DangNhapView : Window
     {
+
         public DangNhapView()
         {
             InitializeComponent();
@@ -23,32 +17,23 @@ namespace WPFApp_QuanLyLinhKien.Views
 
         private void Bt_DangNhap(object sender, RoutedEventArgs e)
         {
-            string user = txtUsername.Text.Trim().ToLower();
-            string pass = txtPassword.Password.Trim().ToLower();
+            var auth = new AuthService();
 
-            var db = new QLLKEntities();
-            var account = db.Accounts
-                    .FirstOrDefault(a => a.Username == txtUsername.Text &&
-                                         a.Password == txtPassword.Password);
-            if (account == null)
+            bool success = auth.Login(txtUsername.Text, txtPassword.Password);
+
+            if (!success)
             {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
                 return;
             }
-            if(account.Role == "Admin")
-            {
-                var adminWindow = new Views.Admin.AdminHomeView();
-                adminWindow.Show();
-                this.Close();
-            }
-            else if (account.Role == "Staff")
-            {
-                var staffWindow = new Views.Staff.StaffHomeView();
-                staffWindow.Show();
-                this.Close();
-            }
-        }
 
+            if (AppSession.CurrentRole == UserRole.Admin)
+                new AdminHomeView().Show();
+            else
+                new StaffHomeView().Show();
+
+            this.Close();
+        }
         private void Bt_Thoat(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
