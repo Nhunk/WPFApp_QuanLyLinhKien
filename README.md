@@ -1,49 +1,78 @@
-# Ứng Dụng WPF Quản Lý Bán Linh Kiện (Tích Hợp AI)
+# Ứng Dụng WPF Quản Lý Bán Linh Kiện (Tích Hợp AI - Database First)
 
-Một ứng dụng Desktop hiện đại được xây dựng bằng **WPF (.NET)**, nhằm quản lý toàn bộ quy trình bán hàng linh kiện điện tử. Dự án tích hợp các công nghệ truy xuất dữ liệu mạnh mẽ (**EF Core/LINQ**) và khả năng dự đoán/xử lý thông minh thông qua mô hình **AI/ONNX**.
+Ứng dụng Desktop được xây dựng bằng **WPF (.NET)** nhằm quản lý toàn bộ quy trình bán hàng linh kiện điện tử.  
+Dự án sử dụng kiến trúc **Database First** với **Entity Framework 6 (EF6)**, kết hợp xử lý dữ liệu thông minh qua **mô hình AI dạng ONNX**.
 
 ---
 
 ## Tính Năng Nổi Bật
 
-* **Quản lý CRUD Đầy Đủ:** Quản lý danh mục Sản phẩm, Khách hàng, Đơn hàng, và Kho hàng.
-* **Truy vấn Hiệu quả:** Sử dụng **Entity Framework Core** kết hợp với **LINQ** để truy xuất dữ liệu nhanh chóng và an toàn.
-* **Tích hợp AI/ONNX:** Sử dụng mô hình Machine Learning định dạng **ONNX** để [Ví dụ: dự đoán nhu cầu tồn kho, phân loại sản phẩm, hoặc gợi ý mua hàng].
-* **Giao diện WPF:** Giao diện người dùng trực quan, được xây dựng trên Windows Presentation Foundation.
-* **Tích hợp API:** Giao tiếp với các dịch vụ bên ngoài (hoặc mô hình AI) qua các lệnh gọi API.
+- **Quản lý CRUD đầy đủ**: Sản phẩm, Khách hàng, Nhà cung cấp, Nhân viên, Đơn hàng, Kho hàng.
+- **Truy xuất dữ liệu mạnh mẽ**: Sử dụng **Entity Framework 6 (Database First)** + LINQ để thao tác dữ liệu.
+- **Tích hợp AI/ONNX**: Đọc mô hình ONNX để dự đoán tồn kho, gợi ý mua hàng, phân loại sản phẩm,...
+- **Giao diện đẹp với WPF**: Dễ sử dụng, điều hướng rõ ràng, hỗ trợ phân quyền (Admin/Staff).
+- **Kiến trúc tách lớp**: View – ViewModel – Services – Models.
+- **Phân quyền người dùng**: Dựa trên bảng Account trong database.
 
 ---
 
 ## Công Nghệ Sử Dụng
 
-| Lĩnh vực | Công nghệ | Phiên bản | Ghi chú |
-| :--- | :--- | :--- | :--- |
-| **Giao diện** | WPF (Windows Presentation Foundation) | .NET 8 | Ứng dụng Desktop chạy trên Windows |
-| **ORM** | Entity Framework Core (EF Core) | 8.0.4 | Quản lý Database |
-| **Database** | SQL Server (LocalDB/Express) | N/A | Cơ sở dữ liệu quan hệ |
-| **Truy vấn** | LINQ (Language Integrated Query) | C# | Thao tác dữ liệu mạnh mẽ |
-| **AI/ML** | ONNX Runtime | N/A | Tích hợp mô hình AI đã huấn luyện |
+| Lĩnh vực | Công nghệ | Ghi chú |
+|--------|------------|---------|
+| UI | WPF (.NET Framework) | Ứng dụng Desktop Windows |
+| ORM | Entity Framework 6 | **Database First** |
+| Database | SQL Server / LocalDB | Chứa toàn bộ dữ liệu |
+| AI | ONNX Runtime | Chạy mô hình AI |
+| Ngôn ngữ | C# | .NET |
 
-### Các Gói NuGet Cần Thiết (EF Core 8.0.4)
+## Các Gói NuGet Cần Thiết
 
-* `Microsoft.EntityFrameworkCore`
-* `Microsoft.EntityFrameworkCore.SqlServer`
-* `Microsoft.EntityFrameworkCore.Design`
-* `Microsoft.EntityFrameworkCore.Tools`
-* **[Gói ONNX của bạn]** Ví dụ: `Microsoft.ML.OnnxRuntime`
+### 1. **Entity Framework 6 (Database First)**
+
+- `EntityFramework`
+- `Microsoft.Data.SqlClient` (nếu cần)
+- `System.Configuration.ConfigurationManager`
+
+### 2. **AI/ML (ONNX Runtime)**
+
+- `Microsoft.ML.OnnxRuntime`
+- `Microsoft.ML.OnnxRuntime.Managed`
 
 ---
 
-## Cài Đặt và Khởi Chạy
+## 🗄 Kiến Trúc Dự Án
 
-### 1. Yêu cầu Hệ thống
+```text
+WPFApp_QuanLyLinhKien
+├── Models                # Entity Framework Database First (EDMX + POCO classes)
+├── Services              # Xử lý đăng nhập, session, nghiệp vụ
+│     └── AuthService.cs
+│     └── AppSession.cs
+├── ViewModels            # MVVM ViewModel
+├── Views                 # XAML UI (Admin + Staff)
+├── Data                  # Thư mục chứa ảnh sản phẩm
+└── README.md
+```
+## Hướng Dẫn Cài Đặt Ứng Dụng WPF Quản Lý Bán Linh Kiện (Database First + AI ONNX)
 
-* [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (Bắt buộc)
-* Visual Studio 2022 (Khuyến nghị)
-* SQL Server LocalDB (Data storage and processing - Mặc định được cài cùng Visual Studio)
+### 1. YÊU CẦU HỆ THỐNG
 
-### 2. Tải Mã Nguồn
+| Thành phần | Yêu cầu |
+|-----------|---------|
+| **Hệ điều hành** | Windows 10/11 |
+| **IDE** | Visual Studio 2019 hoặc 2022 |
+| **.NET Framework** | 4.7.2+ |
+| **Cơ sở dữ liệu** | SQL Server Express / LocalDB |
+| **ORM** | Entity Framework 6 (Database First) |
+| **AI Runtime** | ONNX Runtime |
+
+---
+
+### 2. CÀI ĐẶT PROJECT
+
+## 🔹 2.1. Clone mã nguồn
 
 ```bash
-git clone [https://github.com/Nhunk/WPFApp_QuanLyLinhKien](https://github.com/Nhunk/WPFApp_QuanLyLinhKien)
+git clone https://github.com/Nhunk/WPFApp_QuanLyLinhKien
 cd WPFApp_QuanLyLinhKien
